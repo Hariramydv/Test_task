@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :discussion_topics
+ 
   resources :campaigns do
+    resources :discussion_topics
     resources :comments
   end
   resources :campaigns

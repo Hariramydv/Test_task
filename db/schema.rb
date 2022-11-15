@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_14_103826) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_15_060440) do
   create_table "campaigns", force: :cascade do |t|
     t.string "title"
     t.string "purpose"
@@ -22,6 +22,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_14_103826) do
 
   create_table "comments", force: :cascade do |t|
     t.text "comment"
+    t.integer "user_id"
+    t.integer "campaign_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "discussion_topics", force: :cascade do |t|
+    t.text "title"
     t.integer "user_id"
     t.integer "campaign_id"
     t.datetime "created_at", null: false

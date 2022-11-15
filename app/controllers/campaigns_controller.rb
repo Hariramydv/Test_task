@@ -3,7 +3,7 @@ class CampaignsController < ApplicationController
 
   # GET /campaigns or /campaigns.json
   def index
-    @campaigns = current_user.campaigns.all
+    @campaigns = current_user.campaigns
   end
 
   # GET /campaigns/1 or /campaigns/1.json

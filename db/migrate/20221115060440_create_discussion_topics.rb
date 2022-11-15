@@ -3,6 +3,7 @@ class CreateDiscussionTopics < ActiveRecord::Migration[7.0]
     create_table :discussion_topics do |t|
       t.text :title
       t.integer :user_id
+      t.integer :campaign_id
       t.timestamps
     end
   end

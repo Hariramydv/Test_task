@@ -10,6 +10,9 @@
   <%#= link_to "New comment", new_campaign_comment_path(@campaign) %>
 </div>
 
+
 <%= render @campaign.comments %>
+<%= render @campaign.discussion_topics %>
 
 <%= render 'comments/form'%>
+<%= render 'discussion_topics/form' %>
