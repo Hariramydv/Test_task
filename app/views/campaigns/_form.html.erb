@@ -1,0 +1,37 @@
+<%= form_with(model: campaign) do |form| %>
+  <% if campaign.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(campaign.errors.count, "error") %> prohibited this campaign from being saved:</h2>
+
+      <ul>
+        <% campaign.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :purpose, style: "display: block" %>
+    <%= form.text_field :purpose %>
+  </div>
+
+  <div>
+    <%= form.label :estimated_duration, style: "display: block" %>
+    <%= form.radio_button :estimated_duration, "within 1 week" %>
+    <%= form.label :estimated_duration, "within 1 week" %>
+    <%= form.radio_button :estimated_duration, "within 1 month" %>
+    <%= form.label :estimated_duration, "within 1 month" %>
+    <%= form.radio_button :estimated_duration, "within 3 month" %>
+    <%= form.label :estimated_duration, "within 3 month" %>
+  </div>
+  <br>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

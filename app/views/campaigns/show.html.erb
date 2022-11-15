@@ -1,0 +1,15 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @campaign %>
+
+<div>
+  <%= link_to "Edit this campaign", edit_campaign_path(@campaign) %> |
+  <%= link_to "Back to campaigns", campaigns_path %>
+
+  <%= button_to "Destroy this campaign", @campaign, method: :delete %>
+  <%#= link_to "New comment", new_campaign_comment_path(@campaign) %>
+</div>
+
+<%= render @campaign.comments %>
+
+<%= render 'comments/form'%>
